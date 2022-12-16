@@ -1,4 +1,3 @@
-import re
 while (True):
     number_str = input("Введите трехзначное число ")
     try:
