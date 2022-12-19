@@ -1,13 +1,16 @@
 while (True):
-    number_str = input("Введите общее число журавликов ")
+    number_str = input("Введите трехзначное число ")
     try:
         number = int(number_str)
-        # меньше 6 сделать невозможно,число должно быть кратно 6 при условии целых журавликов
-        if (number >= 6 and number % 6 == 0):
+        if (100 <= abs(number) <= 1000):
+            tmp_num = abs(number)
             break
         else:
             raise
     except:
-        print("Неккоректное число журавликов")
-print(number_str+"->"+str((number//6))+" " +
-      str((4*(number//6)))+" " + str((number//6)))
+        print("Неккоректный ввод числа")
+result = 0
+while (tmp_num > 0):
+    result += tmp_num % 10
+    tmp_num //= 10
+print(result)
