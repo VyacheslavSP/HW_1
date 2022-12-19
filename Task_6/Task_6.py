@@ -18,14 +18,15 @@ while (True):
         print("Неккоректный номер билета")
 tmp_summ_left = 0
 tmp_summ_right = 0
+Odd = False
 for i in range(int(len(number_str)/2)):
     tmp_summ_left += int(number_str[i])
     tmp_summ_right += int(number_str[-i-1])
-# print(str(tmp_summ_left)+"  " + str(tmp_summ_right))
+print(str(tmp_summ_left)+"  " + str(tmp_summ_right))
 if (tmp_summ_left == tmp_summ_right):
     if (Odd):
         print('билет "условно" счастливый')
     else:
-        print("билет не счастливый")
+        print("билет счастливый")
 else:
-    print("билет счастливый")
+    print("билет не счастливый")

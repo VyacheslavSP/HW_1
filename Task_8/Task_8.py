@@ -33,22 +33,26 @@ while (True):
     except MyError as mr:
         print(mr)
 correct = False
-if (pieces >= min(len, width)):
-    i = 1
-    j = 1
-    while (i <= len):
-        if (width*i == pieces):
-            correct = True
-            break
-        i += 1
-        while (j < width):
-            if (width*i == pieces):
-                correct = True
-                break
-            j += 1
-else:
-    correct = False     # излишняя строка, по умолчанию Ложь
+if (pieces <= (width*len)):
+    if ((pieces % len == 0) or (pieces % width == 0)):
+        correct = True
 if (correct):
     print("Разделить можно")
 else:
     print("Разделить нельзя")
+ # другой вариант решения-перебором
+ # /if (pieces >= min(len, width)):
+#    i = 1
+#    j = 1
+#    while (i <= len):
+#        if (width*i == pieces):
+#            correct = True
+#            break
+#        i += 1
+#        while (j < width):
+#            if (width*i == pieces):
+#                correct = True
+#                break
+#            j += 1
+# else:
+#    correct = False     # излишняя строка, по умолчанию Ложь
